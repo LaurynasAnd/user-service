@@ -19,20 +19,23 @@
     <h4>Here is data of total signatures and total identifications by client, downloaded from API:</h4>
     <div class="table-container">
         <table>
+
             <tr>
                 <th class="first-collumn">Months</th>
             {% for header in headers %}
                 <th>{{header}}</th>
             {% endfor %}
             </tr>
-        {% for month, clients in data %}
-            <tr> 
-                <td>{{month}}</td> 
-                {% for value in clients %}
-                    <td>{{value}}</td>
-                {% endfor %}
-            </tr>
-        {% endfor %}
+
+            {% for month, clients in data %}
+                <tr> 
+                    <td>{{month}}</td> 
+                    {% for value in clients %}
+                        <td>{{value}}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+
         </table>
     </div>
 </div>
