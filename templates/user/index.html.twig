@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello There! ✅</h1>
+    Data was {{loaded}} <br>
+    Here is data downloaded from API:
+    <table>
+        <tr>
+        <th>Month</th>
+        {% for client, value in data['2010-01'] %}
+            <th>{{client}}</th>
+        {% endfor %}
+        </tr>
+    {% for month, client in data %}
+        <tr> <td>{{month}}</td> 
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+{% endblock %}
